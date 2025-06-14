@@ -83,3 +83,70 @@ def student():
                 print("\nModule Retriever")
                 retriever_count += 1
                 progression = "Module Retriever"
+
+# Define a function for staff members to get the progression outcomes for multiple inputs
+def staff():
+
+        student()
+        
+        # Storing inputs and progression outcomes to the lists
+        inputs=[progression , pass_credits , defer_credits , fail_credits]
+        all_inputs.append(inputs)
+
+        # User choice to continue entering data or quit to view results
+        choice=(input("\nWould you like to enter another set of data ?\nEnter 'y' for yes or 'q' to quit and view result :")).lower()
+        while choice not in ["y","q"]:
+               choice=(input("\nPlease enter 'y' or 'q'\nWould you like to enter another set of data ? :")).lower()
+               continue
+        if choice == "y":
+                staff()
+
+
+
+
+# Main code                                
+print("Part 1 :")
+
+while True:
+        
+        try:
+                # Checking whether user is a student or staff member
+                member=int(input("\nEnter '0' for log as a student or '1' for log as a staff member :"))
+                if member == 0:
+                        student()
+                        break # End the programme for students
+                
+                elif member == 1:
+                        staff()    
+
+                        print("\nPart 2 :\n")
+
+                        # Looping through collected inputs in the list and display each set of data
+                        for data in all_inputs :
+                                print(data[0],"-",data[1],",",data[2],",",data[3])
+
+
+                        print("\nPart 3 :\n")
+
+                        # Opening a file and writing each set of collected inputs to it
+                        file = open("Programme_Inputs.txt", "w")
+                        for data in all_inputs:
+                               file.write(f"{data[0]} - {data[1]} , {data[2]} , {data[3]}\n")
+                        file.close() # Closing file after writing
+
+                        # Reading the contents of the file and storing it
+                        file = open("Programme_Inputs.txt", "r")
+                        file_data = file.read()
+                        file.close()
+
+                        # Printing the contents of the file
+                        print(file_data)
+
+                        break # End the programme for staff members
+                else:
+                        print("Enter valid number")
+                        continue
+
+        except ValueError:
+                print("Enter valid number")
+                continue           
