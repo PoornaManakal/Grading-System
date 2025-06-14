@@ -1,3 +1,5 @@
+from graphics import * # Importing necessary graphics library
+
 # Range of marks defined as a list
 marks_range=[0,20,40,60,80,100,120] 
 
@@ -102,8 +104,6 @@ def staff():
                 staff()
 
 
-
-
 # Main code                                
 print("Part 1 :")
 
@@ -117,7 +117,95 @@ while True:
                         break # End the programme for students
                 
                 elif member == 1:
-                        staff()    
+                        staff() 
+
+                        # Calculating and preparing data for histogram
+                        total_outcomes = progress_count + trailer_count + retriever_count + exclude_count
+
+                        progress_height = (progress_count / total_outcomes)*400
+                        trailer_height = (trailer_count / total_outcomes)*400
+                        retreiver_height = (retriever_count  / total_outcomes)*400
+                        exclude_height = (exclude_count / total_outcomes)*400
+
+                        # Initializing and setting up the graphical window for histogram
+                        win = GraphWin("Histogram", 720, 660)
+                        win.setBackground("White")
+
+                        # Title of the histogram
+                        heading = Text(Point(250,50),"Histogram Results")
+                        heading.setStyle("bold")
+                        heading.setSize(30)
+                        heading.draw(win)
+
+                        # Bottom line of the histogram
+                        bottom_line = Line(Point(50,540), Point(670,540))
+                        bottom_line.draw(win)
+
+                        # Display total number of outcomes
+                        text5 = Text(Point(220,610),f"{total_outcomes} outcomes in total")
+                        text5.setStyle("bold")
+                        text5.setSize(20)
+                        text5.draw(win)
+
+                        # First bar to represent outcomes of Progress                        
+                        bar1 = Rectangle(Point(90,540), Point(210,(540-progress_height)))
+                        bar1.setFill("green")
+                        bar1.draw(win)
+
+                        count1 = Text(Point(150,(530-progress_height)),progress_count)
+                        count1.setStyle("bold")
+                        count1.setSize(14)
+                        count1.draw(win)
+
+                        text1 = Text(Point(150,555),"Progress")
+                        text1.setStyle("bold")
+                        text1.setSize(16)
+                        text1.draw(win)
+
+                        # Second bar to represent outcomes of Module Trailer 
+                        bar2 = Rectangle(Point(230,540), Point(350,(540-trailer_height)))
+                        bar2.setFill("blue")
+                        bar2.draw(win)
+
+                        count2 = Text(Point(290,(530-trailer_height)),trailer_count)
+                        count2.setStyle("bold")
+                        count2.setSize(14)
+                        count2.draw(win)
+
+                        text2 = Text(Point(290,555),"Trailer")
+                        text2.setStyle("bold")
+                        text2.setSize(16)
+                        text2.draw(win)
+
+                        # Third bar to represent outcomes of Module Retreiver
+                        bar3 = Rectangle(Point(370,540), Point(490,(540-retreiver_height)))
+                        bar3.setFill("yellow")
+                        bar3.draw(win)
+
+                        count3 = Text(Point(430,(530-retreiver_height)),retriever_count)
+                        count3.setStyle("bold")
+                        count3.setSize(14)
+                        count3.draw(win)
+
+                        text3 = Text(Point(430,555),"Retriever")
+                        text3.setStyle("bold")
+                        text3.setSize(16)
+                        text3.draw(win)
+
+                        # Fourth bar to represent outcomes of Exclude
+                        bar4 = Rectangle(Point(510,540), Point(630,(540-exclude_height)))
+                        bar4.setFill("red")
+                        bar4.draw(win)
+
+                        count4 = Text(Point(570,(530-exclude_height)),exclude_count)
+                        count4.setStyle("bold")
+                        count4.setSize(14)
+                        count4.draw(win)
+
+                        text4 = Text(Point(570,555),"Exclude")
+                        text4.setStyle("bold")
+                        text4.setSize(16)
+                        text4.draw(win)   
 
                         print("\nPart 2 :\n")
 
