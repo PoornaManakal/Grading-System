@@ -7,10 +7,10 @@
 This is a Python-based program that predicts progression outcomes based on inputted credit values for **Pass**, **Defer**, and **Fail**. 
 Based on the inputs, the program determines whether a student:
 
-- ✅ Progresses
-- 🚩 Progresses (module trailer)
-- 🔄 Requires module retrieval
-- ❌ Is excluded
+-  Progresses
+-  Progresses (module trailer)
+-  Requires module retrieval
+-  Is excluded
 
 It also generates a histogram visualization of the progression outcomes using the `graphics.py` library. It includes input validation, multiple data handling, and file handling for saving and loading progression data.
 
@@ -18,13 +18,13 @@ It also generates a histogram visualization of the progression outcomes using th
 
 ## ✨ Features
 
-- ✔️ Input validation (integer check, range check, total check)
-- ✔️ Handles both single and multiple progression checks
-- ✔️ Stores progression data in nested lists
-- ✔️ Generates a **graphical histogram** using `graphics.py`
-- ✔️ Saves progression outcomes to a text file and retrieves them
-- ✔️ User-friendly interface with clear prompts
-- ✔️ Structured with user-defined functions
+-  Input validation (integer check, range check, total check)
+-  Handles both single and multiple progression checks
+-  Stores progression data in nested lists
+-  Generates a **graphical histogram** using `graphics.py`
+-  Saves progression outcomes to a text file and retrieves them
+-  User-friendly interface with clear prompts
+-  Structured with user-defined functions
 
 ---
 
@@ -38,11 +38,15 @@ It also generates a histogram visualization of the progression outcomes using th
 1. Download or clone this repository:
    ```
    git clone https://github.com/PoornaManakal/Grading-System.git
+   
 2. Place `graphics.py` in the same directory as the main Python file (if not already included).
+
 3. Run the Python file:
+
    ```
    python main.py
    ```
+   
 4. Follow the prompts:
    - Enter `0` for single input
    - Enter `1` for multiple inputs with histogram and file handling
